@@ -1,13 +1,34 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-char usercheck(int id , int password){
-    if(no match)
-    return no
-    else if(borrower)
-    return borrow
-    else 
-    return officer
+struct user {
+    int userID;
+    char firstName[100];
+    char LastName[100];
+    int acctNum;
+    char password[100];
+    char class;
+}
+struct book {
+    int bookID;
+    char title[100];
+    char author[100];
+    struct user *user;
+    int borrowDate[3];
+    int returnDate[3];
+}
+
+
+char usercheck(int id , char password, struct user users, int length){
+    int i = 0;
+    for (;i<length;i++) {
+        
+        if(users[i].userID==id)
+            if (!strcmp(password,user[i].password)
+                return class;
+    }
+    return '\0';            
 }
 
 char borrowersearch(char author[])
