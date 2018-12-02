@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+//wei
+
 int usercheck(char id[] , char password[]){
     if(no match)
     return 0;
