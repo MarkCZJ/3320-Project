@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-char usercheck(int id , int password){
+int usercheck(char id[] , char password[]){
     if(no match)
-    return no
+    return 0;
     else if(borrower)
-    return borrow
+    return 1;
     else 
-    return officer
+    return 2;
 }
 
 char borrowersearch(char author[])
@@ -60,7 +60,7 @@ void borrowermenu(){
         printf("Ask for title");
         scanf("%s", title);
         int x = 0;
-        while (x == 0 ){
+        while (x == 0){
             x = borrowercheck(title);}
         
     }
@@ -78,8 +78,21 @@ int main(int argc, char const *argv[])
     scanf("%s" , userid);
     printf("Password");
     scanf("%s", password);
+    x= usercheck(userid , password);
+    while(x =0){
+        printf("User name");
+        scanf("%s", userid);
+        printf("Password");
+        scanf("%s", password);
+        x = usercheck(userid, password);
+    }
+    
+    if( x == 1){
+        borrowermenu();
+    }
 
-    char status = usercheck(userid , password);
+    else 
+        librarianmenu();
 
     return 0;
 }
